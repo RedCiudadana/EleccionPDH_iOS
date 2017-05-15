@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  RankingController.h
 //  EleccionesPDH
 //
 //  Created by Jeffry Turcios on 5/14/17.
 //  Copyright © 2017 Codifay. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface ViewController : UIViewController
-
+@interface RankingController : ViewController
 
 @end
-

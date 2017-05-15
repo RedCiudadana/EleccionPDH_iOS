@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="elecciopdh">
+    <entity name="DiputadoComision" representedClassName="DiputadoComision" syncable="YES" codeGenerationType="class">
+        <attribute name="biografia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cargo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cargoNombreCorto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desempenio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="direccion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="distrito" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="educacion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechaNacimiento" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fotoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="historialPolitico" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idDiputado" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lugarNacimiento" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partidoActual" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partidoPostulante" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profesion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sexo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telefono" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="web" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Partido" representedClassName="Partido" syncable="YES" codeGenerationType="class">
+        <attribute name="codigo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fundacion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ideologiaPolitica" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idPartido" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="noDeAfiliados" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreCompleto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreCorto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="presidenteBancada" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="presidenteBancadaID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="secretarioGeneral" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sede" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telefono" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telefono2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="web" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yt" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Perfil" representedClassName="Perfil" syncable="YES" codeGenerationType="class">
+        <attribute name="asistencia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="biografia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cargo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cargoNombreCorto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comision" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comision2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comision3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desempenio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="direccion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="distrito" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="educacion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="experienciaEnDH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="experienciaProfesional" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechaNacimiento" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fotoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="historialPolitico" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idPerfil" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="institucion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lugarNacimiento" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partidoActual" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partidoPostulante" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="planTrabajo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profesion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sexo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telefono" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="web" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TablaGradacion" representedClassName="TablaGradacion" syncable="YES" codeGenerationType="class">
+        <attribute name="aspecto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="perfil" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="puntaje" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DiputadoComision" positionX="-27" positionY="18" width="128" height="375"/>
+        <element name="Perfil" positionX="18" positionY="63" width="128" height="495"/>
+        <element name="TablaGradacion" positionX="54" positionY="99" width="128" height="90"/>
+        <element name="Partido" positionX="18" positionY="63" width="128" height="330"/>
+    </elements>
+</model>

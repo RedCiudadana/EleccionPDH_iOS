@@ -9,12 +9,19 @@
 /* Begin PBXBuildFile section */
 		394EB0B21EC92AF500CD42EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB0B11EC92AF500CD42EB /* main.m */; };
 		394EB0B51EC92AF500CD42EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB0B41EC92AF500CD42EB /* AppDelegate.m */; };
-		394EB0B81EC92AF500CD42EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB0B71EC92AF500CD42EB /* ViewController.m */; };
 		394EB0BB1EC92AF500CD42EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394EB0B91EC92AF500CD42EB /* Main.storyboard */; };
 		394EB0BD1EC92AF500CD42EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 394EB0BC1EC92AF500CD42EB /* Assets.xcassets */; };
 		394EB0C01EC92AF500CD42EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394EB0BE1EC92AF500CD42EB /* LaunchScreen.storyboard */; };
 		394EB0CB1EC92AF500CD42EB /* EleccionesPDHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB0CA1EC92AF500CD42EB /* EleccionesPDHTests.m */; };
 		394EB0D61EC92AF500CD42EB /* EleccionesPDHUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB0D51EC92AF500CD42EB /* EleccionesPDHUITests.m */; };
+		394EB0E71EC92C0600CD42EB /* EleccionPDH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 394EB0E41EC92B2700CD42EB /* EleccionPDH.xcdatamodeld */; };
+		394EB0F21EC9772F00CD42EB /* SingletonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB0F11EC9772F00CD42EB /* SingletonUtilities.m */; };
+		394EB1101EC97AC000CD42EB /* CandidatosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB1071EC97AC000CD42EB /* CandidatosController.m */; };
+		394EB1111EC97AC000CD42EB /* DiputadosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB1091EC97AC000CD42EB /* DiputadosController.m */; };
+		394EB1121EC97AC000CD42EB /* NoticiasController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB10B1EC97AC000CD42EB /* NoticiasController.m */; };
+		394EB1131EC97AC000CD42EB /* RankingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB10D1EC97AC000CD42EB /* RankingController.m */; };
+		394EB1141EC97AC000CD42EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EB10F1EC97AC000CD42EB /* ViewController.m */; };
+		B2FE56C6AD91BD3380A63699 /* libPods-EleccionesPDH.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8599CC212882956E32A67062 /* libPods-EleccionesPDH.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F4451C67CF25EE9E10DF9F6 /* Pods-EleccionesPDH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EleccionesPDH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EleccionesPDH/Pods-EleccionesPDH.debug.xcconfig"; sourceTree = "<group>"; };
 		394EB0AD1EC92AF500CD42EB /* EleccionesPDH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EleccionesPDH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		394EB0B11EC92AF500CD42EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		394EB0B31EC92AF500CD42EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		394EB0B41EC92AF500CD42EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		394EB0B61EC92AF500CD42EB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		394EB0B71EC92AF500CD42EB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		394EB0BA1EC92AF500CD42EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		394EB0BC1EC92AF500CD42EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		394EB0BF1EC92AF500CD42EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +57,21 @@
 		394EB0D11EC92AF500CD42EB /* EleccionesPDHUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EleccionesPDHUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		394EB0D51EC92AF500CD42EB /* EleccionesPDHUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EleccionesPDHUITests.m; sourceTree = "<group>"; };
 		394EB0D71EC92AF500CD42EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		394EB0E51EC92B2700CD42EB /* EleccionPDH.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EleccionPDH.xcdatamodel; sourceTree = "<group>"; };
+		394EB0F01EC9772F00CD42EB /* SingletonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingletonUtilities.h; path = Utilities/SingletonUtilities.h; sourceTree = "<group>"; };
+		394EB0F11EC9772F00CD42EB /* SingletonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingletonUtilities.m; path = Utilities/SingletonUtilities.m; sourceTree = "<group>"; };
+		394EB1061EC97AC000CD42EB /* CandidatosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CandidatosController.h; path = Controllers/CandidatosController.h; sourceTree = "<group>"; };
+		394EB1071EC97AC000CD42EB /* CandidatosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CandidatosController.m; path = Controllers/CandidatosController.m; sourceTree = "<group>"; };
+		394EB1081EC97AC000CD42EB /* DiputadosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiputadosController.h; path = Controllers/DiputadosController.h; sourceTree = "<group>"; };
+		394EB1091EC97AC000CD42EB /* DiputadosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiputadosController.m; path = Controllers/DiputadosController.m; sourceTree = "<group>"; };
+		394EB10A1EC97AC000CD42EB /* NoticiasController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticiasController.h; path = Controllers/NoticiasController.h; sourceTree = "<group>"; };
+		394EB10B1EC97AC000CD42EB /* NoticiasController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoticiasController.m; path = Controllers/NoticiasController.m; sourceTree = "<group>"; };
+		394EB10C1EC97AC000CD42EB /* RankingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingController.h; path = Controllers/RankingController.h; sourceTree = "<group>"; };
+		394EB10D1EC97AC000CD42EB /* RankingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingController.m; path = Controllers/RankingController.m; sourceTree = "<group>"; };
+		394EB10E1EC97AC000CD42EB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controllers/ViewController.h; sourceTree = "<group>"; };
+		394EB10F1EC97AC000CD42EB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
+		8599CC212882956E32A67062 /* libPods-EleccionesPDH.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EleccionesPDH.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7626A0F351C45AEB11798E5 /* Pods-EleccionesPDH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EleccionesPDH.release.xcconfig"; path = "Pods/Target Support Files/Pods-EleccionesPDH/Pods-EleccionesPDH.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2FE56C6AD91BD3380A63699 /* libPods-EleccionesPDH.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0888DEBFCCEDB8658E1C8DB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F4451C67CF25EE9E10DF9F6 /* Pods-EleccionesPDH.debug.xcconfig */,
+				B7626A0F351C45AEB11798E5 /* Pods-EleccionesPDH.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		394EB0A41EC92AF500CD42EB = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +116,8 @@
 				394EB0C91EC92AF500CD42EB /* EleccionesPDHTests */,
 				394EB0D41EC92AF500CD42EB /* EleccionesPDHUITests */,
 				394EB0AE1EC92AF500CD42EB /* Products */,
+				0888DEBFCCEDB8658E1C8DB5 /* Pods */,
+				C684F93F796AB776AB3AA3BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,12 +136,13 @@
 			children = (
 				394EB0B31EC92AF500CD42EB /* AppDelegate.h */,
 				394EB0B41EC92AF500CD42EB /* AppDelegate.m */,
-				394EB0B61EC92AF500CD42EB /* ViewController.h */,
-				394EB0B71EC92AF500CD42EB /* ViewController.m */,
+				394EB0EE1EC94EFE00CD42EB /* Controllers */,
+				394EB0EF1EC9772300CD42EB /* Utilities */,
 				394EB0B91EC92AF500CD42EB /* Main.storyboard */,
 				394EB0BC1EC92AF500CD42EB /* Assets.xcassets */,
 				394EB0BE1EC92AF500CD42EB /* LaunchScreen.storyboard */,
 				394EB0C11EC92AF500CD42EB /* Info.plist */,
+				394EB0E41EC92B2700CD42EB /* EleccionPDH.xcdatamodeld */,
 				394EB0B01EC92AF500CD42EB /* Supporting Files */,
 			);
 			path = EleccionesPDH;
@@ -140,6 +174,40 @@
 			path = EleccionesPDHUITests;
 			sourceTree = "<group>";
 		};
+		394EB0EE1EC94EFE00CD42EB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				394EB1061EC97AC000CD42EB /* CandidatosController.h */,
+				394EB1071EC97AC000CD42EB /* CandidatosController.m */,
+				394EB1081EC97AC000CD42EB /* DiputadosController.h */,
+				394EB1091EC97AC000CD42EB /* DiputadosController.m */,
+				394EB10A1EC97AC000CD42EB /* NoticiasController.h */,
+				394EB10B1EC97AC000CD42EB /* NoticiasController.m */,
+				394EB10C1EC97AC000CD42EB /* RankingController.h */,
+				394EB10D1EC97AC000CD42EB /* RankingController.m */,
+				394EB10E1EC97AC000CD42EB /* ViewController.h */,
+				394EB10F1EC97AC000CD42EB /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		394EB0EF1EC9772300CD42EB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				394EB0F01EC9772F00CD42EB /* SingletonUtilities.h */,
+				394EB0F11EC9772F00CD42EB /* SingletonUtilities.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		C684F93F796AB776AB3AA3BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8599CC212882956E32A67062 /* libPods-EleccionesPDH.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 394EB0DA1EC92AF500CD42EB /* Build configuration list for PBXNativeTarget "EleccionesPDH" */;
 			buildPhases = (
+				F1BF325FB6ABE98912064DC1 /* [CP] Check Pods Manifest.lock */,
 				394EB0A91EC92AF500CD42EB /* Sources */,
 				394EB0AA1EC92AF500CD42EB /* Frameworks */,
 				394EB0AB1EC92AF500CD42EB /* Resources */,
+				43446F7113816BE39603CC4C /* [CP] Embed Pods Frameworks */,
+				870266F1B25C47F6E118FDF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,13 +342,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		43446F7113816BE39603CC4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EleccionesPDH/Pods-EleccionesPDH-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		870266F1B25C47F6E118FDF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EleccionesPDH/Pods-EleccionesPDH-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1BF325FB6ABE98912064DC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		394EB0A91EC92AF500CD42EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				394EB0B81EC92AF500CD42EB /* ViewController.m in Sources */,
+				394EB1141EC97AC000CD42EB /* ViewController.m in Sources */,
 				394EB0B51EC92AF500CD42EB /* AppDelegate.m in Sources */,
+				394EB1101EC97AC000CD42EB /* CandidatosController.m in Sources */,
+				394EB1121EC97AC000CD42EB /* NoticiasController.m in Sources */,
+				394EB0E71EC92C0600CD42EB /* EleccionPDH.xcdatamodeld in Sources */,
+				394EB1131EC97AC000CD42EB /* RankingController.m in Sources */,
+				394EB1111EC97AC000CD42EB /* DiputadosController.m in Sources */,
+				394EB0F21EC9772F00CD42EB /* SingletonUtilities.m in Sources */,
 				394EB0B21EC92AF500CD42EB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +552,7 @@
 		};
 		394EB0DB1EC92AF500CD42EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F4451C67CF25EE9E10DF9F6 /* Pods-EleccionesPDH.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S23FGB69WV;
@@ -439,6 +565,7 @@
 		};
 		394EB0DC1EC92AF500CD42EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7626A0F351C45AEB11798E5 /* Pods-EleccionesPDH.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S23FGB69WV;
@@ -518,6 +645,7 @@
 				394EB0DC1EC92AF500CD42EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		394EB0DD1EC92AF500CD42EB /* Build configuration list for PBXNativeTarget "EleccionesPDHTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +654,7 @@
 				394EB0DF1EC92AF500CD42EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		394EB0E01EC92AF500CD42EB /* Build configuration list for PBXNativeTarget "EleccionesPDHUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,8 +663,23 @@
 				394EB0E21EC92AF500CD42EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		394EB0E41EC92B2700CD42EB /* EleccionPDH.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				394EB0E51EC92B2700CD42EB /* EleccionPDH.xcdatamodel */,
+			);
+			currentVersion = 394EB0E51EC92B2700CD42EB /* EleccionPDH.xcdatamodel */;
+			name = EleccionPDH.xcdatamodeld;
+			path = Models/EleccionPDH.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 394EB0A51EC92AF500CD42EB /* Project object */;
 }

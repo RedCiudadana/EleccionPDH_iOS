@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import <Restkit/CoreData.h>
+#import <Restkit/Restkit.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface AppDelegate ()
 
@@ -17,6 +22,179 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Initialize Crashlytics
+//    [Fabric with:@[[Crashlytics class]]];
+//    [[Fabric sharedSDK] setDebug: YES];
+//    
+    
+    // Initialize networking settings
+    NSURL *baseURL = [NSURL URLWithString:@"https://rawgit.com/RedCiudadana/JusticiaAbiertaBeta/master/public/static-files/"];
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:baseURL];
+    
+    [objectManager.HTTPClient setDefaultHeader:@"User-Agent" value:[NSString stringWithFormat:@"%@/%@ (Mac OS X %@)", [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleExecutableKey] ?: [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleIdentifierKey], [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] ?: [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey], [[NSProcessInfo processInfo] operatingSystemVersionString]]];
+    
+    [RKObjectMapping alloc]; // This ensures you will actually insert at index 0!
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"d-M-yyyy"];
+    //    dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
+    [[RKValueTransformer defaultValueTransformer] insertValueTransformer:dateFormatter atIndex:0];
+    
+    
+    // Initialize managed object store
+    NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+    objectManager.managedObjectStore = managedObjectStore;
+    
+    // Object Mapping
+    RKEntityMapping *perfilMapping = [RKEntityMapping mappingForEntityForName:@"Perfil" inManagedObjectStore:managedObjectStore];
+    perfilMapping.identificationAttributes = @[@"idPerfil"];
+    [perfilMapping addAttributeMappingsFromDictionary:@{
+                                                        @"id":@"idPerfil",
+                                                        @"nombre":@"nombre",
+                                                        @"fotoUrl":@"fotoUrl",
+                                                        @"profesion":@"profesion",
+                                                        @"educacion":@"educacion",
+                                                        @"fechaNacimiento":@"fechaNacimiento",
+                                                        @"institucion":@"institucion",
+                                                        @"cargoNombreCorto":@"cargoNombreCorto",
+                                                        @"cargo":@"cargo",
+                                                        @"lugarNacimiento":@"lugarNacimiento",
+                                                        @"distrito":@"distrito",
+                                                        @"partidoPostulante":@"partidoPostulante",
+                                                        @"partidoActual":@"partidoActual",
+                                                        @"biografia":@"biografia",
+                                                        @"desempenio":@"desempenio",
+                                                        @"historialPolitico":@"historialPolitico",
+                                                        @"asistencia":@"asistencia",
+                                                        @"comision":@"comision",
+                                                        @"comision2":@"comision2",
+                                                        @"comision3":@"comision3",
+                                                        @"email":@"email",
+                                                        @"telefono":@"telefono",
+                                                        @"direccion":@"direccion",
+                                                        @"web":@"web",
+                                                        @"fb":@"fb",
+                                                        @"tw":@"tw",
+                                                        @"sexo":@"sexo",
+                                                        @"experienciaProfesional":@"experienciaProfesional",
+                                                        @"experienciaEnDH":@"experienciaEnDH",
+                                                        @"planTrabajo":@"planTrabajo"
+                                                        }];
+    
+    RKEntityMapping *partidoMapping = [RKEntityMapping mappingForEntityForName:@"Partido" inManagedObjectStore:managedObjectStore];
+    partidoMapping.identificationAttributes = @[@"idPartido"];
+    [partidoMapping addAttributeMappingsFromDictionary:@{
+                                                         @"id":@"idPartido",
+                                                         @"codigo":@"codigo",
+                                                         @"nombreCompleto":@"nombreCompleto",
+                                                         @"nombreCorto":@"nombreCorto",
+                                                         @"logo":@"logo",
+                                                         @"presidenteBancadaID":@"presidenteBancadaID",
+                                                         @"presidenteBancada":@"presidenteBancada",
+                                                         @"web":@"web",
+                                                         @"fb":@"fb",
+                                                         @"tw":@"tw",
+                                                         @"Yt":@"yt",
+                                                         @"email":@"email",
+                                                         @"telefono":@"telefono",
+                                                         @"secretarioGeneral":@"secretarioGeneral",
+                                                         @"fundacion":@"fundacion",
+                                                         @"ideologiaPolitica":@"ideologiaPolitica",
+                                                         @"sede":@"sede",
+                                                         @"noDeAfiliados":@"noDeAfiliados",
+                                                         @"telefono2":@"telefono2",
+                                                         }];
+    
+    RKEntityMapping *diputadoMapping = [RKEntityMapping mappingForEntityForName:@"DiputadoComision" inManagedObjectStore:managedObjectStore];
+    diputadoMapping.identificationAttributes = @[@"idDiputado"];
+    [diputadoMapping addAttributeMappingsFromDictionary:@{
+                                                          @"id":@"idDiputado",
+                                                          @"nombre":@"nombre",
+                                                          @"fotoUrl":@"fotoUrl",
+                                                          @"profesion":@"profesion",
+                                                          @"educacion":@"educacion",
+                                                          @"fechaNacimiento":@"fechaNacimiento",
+                                                          @"cargoNombreCorto":@"cargoNombreCorto",
+                                                          @"cargo":@"cargo",
+                                                          @"lugarNacimiento":@"lugarNacimiento",
+                                                          @"distrito":@"distrito",
+                                                          @"partidoPostulante":@"partidoPostulante",
+                                                          @"partidoActual":@"partidoActual",
+                                                          @"biografia":@"biografia",
+                                                          @"desempenio":@"desempenio",
+                                                          @"historialPolitico":@"historialPolitico",
+                                                          @"email":@"email",
+                                                          @"telefono":@"telefono",
+                                                          @"direccion":@"direccion",
+                                                          @"web":@"web",
+                                                          @"fb":@"fb",
+                                                          @"tw":@"tw",
+                                                          @"sexo":@"sexo",
+                                                          }];
+    
+    // Descriptors
+    RKResponseDescriptor *perfilResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:perfilMapping
+                                                                                                  method:RKRequestMethodGET
+                                                                                             pathPattern:@"perfil.json"
+                                                                                                 keyPath:nil
+                                                                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    RKResponseDescriptor *partidoResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:partidoMapping
+                                                                                                   method:RKRequestMethodGET
+                                                                                              pathPattern:@"partido.json"
+                                                                                                  keyPath:nil
+                                                                                              statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    RKResponseDescriptor *diputadoResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:diputadoMapping
+                                                                                                    method:RKRequestMethodGET
+                                                                                               pathPattern:@"diputados-comision.json"
+                                                                                                   keyPath:nil
+                                                                                               statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:perfilResponseDescriptor];
+    [objectManager addResponseDescriptor:partidoResponseDescriptor];
+    [objectManager addResponseDescriptor:diputadoResponseDescriptor];
+    
+#ifdef RESTKIT_GENERATE_SEED_DB
+    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelInfo);
+    RKLogConfigureByName("RestKit/CoreData", RKLogLevelTrace);
+    
+    NSError *error = nil;
+    BOOL success = RKEnsureDirectoryExistsAtPath(RKApplicationDataDirectory(), &error);
+    if (! success) {
+        RKLogError(@"Failed to create Application Data Directory at path '%@': %@", RKApplicationDataDirectory(), error);
+    }
+    NSString *seedStorePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"RKSeedDatabase.sqlite"];
+    //RKManagedObjectImporter *importer = [[RKManagedObjectImporter alloc] initWithManagedObjectModel:managedObjectModel storePath:seedStorePath];
+    
+    
+    // Clear out the root view controller
+    [self.window setRootViewController:[UIViewController new]];
+#else
+    /**
+     Complete Core Data stack initialization
+     */
+    [managedObjectStore createPersistentStoreCoordinator];
+    NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"EleccionPDH.sqlite"];
+    NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
+    NSError *error;
+    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
+                              NSInferMappingModelAutomaticallyOption: @YES};
+    NSPersistentStore *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:storePath
+                                                                     fromSeedDatabaseAtPath:seedPath
+                                                                          withConfiguration:nil
+                                                                                    options:options
+                                                                                      error:&error];
+    NSAssert(persistentStore, @"Failed to add persistent store with error: %@", error);
+    
+    // Create the managed object contexts
+    [managedObjectStore createManagedObjectContexts];
+    
+    // Configure a managed object cache to ensure we do not create duplicate objects
+    managedObjectStore.managedObjectCache = [[RKInMemoryManagedObjectCache alloc] initWithManagedObjectContext:managedObjectStore.persistentStoreManagedObjectContext];
+#endif
+    
     return YES;
 }
 
