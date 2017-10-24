@@ -1,17 +1,3 @@
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
 # Elección PDH
 
 Encuentra aquí todos los datos sobre la elección del Procurador de Derechos Humanos. ¡Infórmate, interactúa e incide!
@@ -28,16 +14,9 @@ Puedes ponerte en contacto con nosotros a través de correo electrónico de inf
 ## Equipo
 
 Jeffry Turcios 
-
 @jefoutta
-
 jeffry@codifay.com
 
 ## Gracias al apoyo de:
 
 Gracias al apoyo de Open Society, NIMD y PARLAD
-
-
-## License
-
-TODO: Write license
