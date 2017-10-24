@@ -11,6 +11,8 @@
 #import <Restkit/Restkit.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <TwitterKit/TwitterKit.h>
+#import "SingletonUtilities.h"
 
 
 @interface AppDelegate ()
@@ -24,9 +26,11 @@
     // Override point for customization after application launch.
     
     // Initialize Crashlytics
-//    [Fabric with:@[[Crashlytics class]]];
-//    [[Fabric sharedSDK] setDebug: YES];
-//    
+    [Fabric with:@[[Crashlytics class], [Twitter class]]];
+    [[Fabric sharedSDK] setDebug: YES];
+    
+    [[UITabBar appearance] setTintColor:[[SingletonUtilities sharedInstance] colorWithName:MAIN_COLOR alpha:1.0f]];
+
     
     // Initialize networking settings
     NSURL *baseURL = [NSURL URLWithString:@"https://rawgit.com/RedCiudadana/JusticiaAbiertaBeta/master/public/static-files/"];
@@ -112,6 +116,7 @@
                                                           @"id":@"idDiputado",
                                                           @"nombre":@"nombre",
                                                           @"fotoUrl":@"fotoUrl",
+                                                          @"fotoUrlPartido":@"fotoUrlPartido",
                                                           @"profesion":@"profesion",
                                                           @"educacion":@"educacion",
                                                           @"fechaNacimiento":@"fechaNacimiento",
@@ -130,7 +135,16 @@
                                                           @"web":@"web",
                                                           @"fb":@"fb",
                                                           @"tw":@"tw",
+                                                          @"yt":@"yt",
                                                           @"sexo":@"sexo",
+                                                          }];
+    
+    RKEntityMapping *rankingMapping = [RKEntityMapping mappingForEntityForName:@"TablaGradacion" inManagedObjectStore:managedObjectStore];
+    rankingMapping.identificationAttributes = @[@"perfil", @"aspecto"];
+    [rankingMapping addAttributeMappingsFromDictionary:@{
+                                                          @"perfil":@"perfil",
+                                                          @"aspecto":@"aspecto",
+                                                          @"puntaje":@"puntaje"
                                                           }];
     
     // Descriptors
@@ -152,9 +166,16 @@
                                                                                                    keyPath:nil
                                                                                                statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    RKResponseDescriptor *rankingResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:rankingMapping
+                                                                                                    method:RKRequestMethodGET
+                                                                                               pathPattern:@"tabla-gradacion.json"
+                                                                                                   keyPath:nil
+                                                                                               statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
     [objectManager addResponseDescriptor:perfilResponseDescriptor];
     [objectManager addResponseDescriptor:partidoResponseDescriptor];
     [objectManager addResponseDescriptor:diputadoResponseDescriptor];
+    [objectManager addResponseDescriptor:rankingResponseDescriptor];
     
 #ifdef RESTKIT_GENERATE_SEED_DB
     RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelInfo);

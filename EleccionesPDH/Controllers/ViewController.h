@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SingletonUtilities.h"
+#import <KVNProgress/KVNProgress.h>
 
 @interface ViewController : UIViewController
+
+@property (nonatomic, assign) NavBarType navBarType;
 
 @end

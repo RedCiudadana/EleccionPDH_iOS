@@ -7,9 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+typedef NS_ENUM(NSInteger, NavBarType){
+    TRANSPARENT,
+    SOLID,
+};
+
+typedef NS_ENUM(NSInteger, Color) {
+    MAIN_COLOR,
+    ALT_COLOR,
+    LIGHT_GRAY,
+    GRAY
+};
 
 @interface SingletonUtilities : NSObject
 
 + (SingletonUtilities *)sharedInstance;
+
+- (UIColor *)colorWithName:(Color)name alpha:(CGFloat)alpha;
 
 @end

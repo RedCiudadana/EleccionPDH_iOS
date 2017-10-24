@@ -12,6 +12,7 @@
         <attribute name="fb" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fechaNacimiento" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="fotoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fotoUrlPartido" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="historialPolitico" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idDiputado" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lugarNacimiento" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,6 +24,7 @@
         <attribute name="telefono" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tw" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="web" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yt" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Partido" representedClassName="Partido" syncable="YES" codeGenerationType="class">
         <attribute name="codigo" optional="YES" attributeType="String" syncable="YES"/>
@@ -45,7 +47,7 @@
         <attribute name="web" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="yt" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Perfil" representedClassName="Perfil" syncable="YES" codeGenerationType="class">
+    <entity name="Perfil" representedClassName="Perfil" syncable="YES">
         <attribute name="asistencia" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="biografia" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cargo" optional="YES" attributeType="String" syncable="YES"/>
@@ -63,6 +65,7 @@
         <attribute name="fb" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fechaNacimiento" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="fotoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="grade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="historialPolitico" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idPerfil" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="institucion" optional="YES" attributeType="String" syncable="YES"/>
@@ -76,16 +79,17 @@
         <attribute name="telefono" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tw" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="web" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gradacion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TablaGradacion" syncable="YES"/>
     </entity>
     <entity name="TablaGradacion" representedClassName="TablaGradacion" syncable="YES" codeGenerationType="class">
         <attribute name="aspecto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="perfil" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="puntaje" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="puntaje" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DiputadoComision" positionX="-27" positionY="18" width="128" height="375"/>
-        <element name="Perfil" positionX="18" positionY="63" width="128" height="495"/>
-        <element name="TablaGradacion" positionX="54" positionY="99" width="128" height="90"/>
+        <element name="DiputadoComision" positionX="-27" positionY="18" width="128" height="405"/>
         <element name="Partido" positionX="18" positionY="63" width="128" height="330"/>
+        <element name="Perfil" positionX="18" positionY="63" width="128" height="525"/>
+        <element name="TablaGradacion" positionX="54" positionY="99" width="128" height="90"/>
     </elements>
 </model>
